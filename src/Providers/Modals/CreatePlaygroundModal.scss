@@ -1,0 +1,149 @@
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(2px); /* Subtle blur effect */
+    background: rgba(0, 0, 0, 0.2); /* Slightly transparent dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+
+    .modal-body {
+        background: linear-gradient(145deg, #ffffff, #f8f9fa);
+        border-radius: 16px;
+        padding: 40px;
+        width: 500px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        animation: fadeIn 0.3s ease-in-out;
+        position: relative;
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .close-button {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #000; /* Black close button */
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+
+            span.material-icons {
+                font-size: 1.8rem;
+            }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #6e45e2;
+            margin: 0 auto;
+            text-align: center;
+            text-shadow: 0 2px 6px rgba(110, 69, 226, 0.3);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .row {
+            display: flex;
+            justify-content: flex-start; /* Labels align to the left */
+            align-items: center;
+            gap: 15px;
+
+            .item {
+                display: flex;
+                align-items: center;
+                flex: 1;
+
+                span {
+                    font-size: 1rem;
+                    font-weight: 600;
+                    color: #333;
+                    white-space: nowrap; /* Single-line label */
+                    font-family: 'Poppins', sans-serif;
+                    flex: 0 0 auto; /* Labels start on the left */
+                }
+
+                input {
+                    flex: 1;
+                    max-width: 250px; /* Consistent input width */
+                    padding: 12px 15px;
+                    font-size: 1rem;
+                    color: #333;
+                    border: 2px solid #ddd;
+                    border-radius: 8px;
+                    background-color: #f9f9f9;
+                    transition: border-color 0.3s ease;
+
+                    &:focus {
+                        border-color: #6e45e2;
+                        outline: none;
+                    }
+                }
+            }
+
+            &.actions {
+                margin-top: 20px;
+                justify-content: space-between; /* Adjust actions row alignment */
+
+                select {
+                    flex: 0 0 150px; /* Smaller width for dropdown */
+                    padding: 10px 12px;
+                    font-size: 0.9rem;
+                    color: #555;
+                    border: 2px solid #ddd;
+                    border-radius: 8px;
+                    background-color: #f8f8f8;
+                    transition: border-color 0.3s ease;
+
+                    &:focus {
+                        border-color: #6e45e2;
+                        outline: none;
+                    }
+                }
+
+                button {
+                    flex: 1;
+                    background: linear-gradient(135deg, #6e45e2, #4b5de9);
+                    color: white;
+                    padding: 12px 15px;
+                    border: none;
+                    border-radius: 8px;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    font-family: 'Poppins', sans-serif;
+                    cursor: pointer;
+                    transition: background 0.3s ease;
+
+                    &:hover {
+                        background: linear-gradient(135deg, #4b5de9, #6e45e2);
+                        transform: translateY(-2px);
+                    }
+                }
+            }
+        }
+    }
+}

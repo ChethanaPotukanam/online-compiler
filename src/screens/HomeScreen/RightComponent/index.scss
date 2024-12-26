@@ -1,0 +1,202 @@
+.right-container {
+    background-color: #f0f4f8; /* Light blue-gray */
+    color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+    height:100vh;
+    overflow-y:scroll;
+    .header {
+        
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid #e0e0e0;
+        padding: 10px 0;
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0;
+            color: #333;
+        }
+
+        .add-folder {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            background: linear-gradient(45deg, #007bff, #00aaff); /* Blue gradient */
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+            span.material-icons {
+                font-size: 1.2rem;
+            }
+
+            &:hover {
+                background: linear-gradient(45deg, #00aaff, #007bff);
+                transform: translateY(-2px);
+                box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+            }
+
+            &:active {
+                transform: scale(0.98);
+            }
+        }
+    }
+
+    .folder-container {
+        margin-top: 20px;
+        
+        .folder-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom:1px solid black;
+            div:first-child {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                span.material-icons {
+                    font-size: 1.5rem;
+                    color: #FFC107; /* Vibrant yellow for folder icon */
+                }
+
+                span:last-child {
+                    font-size: 1rem;
+                    font-weight: 600;
+                    color: #333;
+                }
+            }
+
+            .actions {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+
+                span.material-icons {
+                    font-size: 1.5rem;
+                    color: #666;
+                    cursor: pointer;
+                    transition: color 0.2s;
+
+                    &:hover {
+                        color: #FF7043; /* Orange-red for hover effects */
+                    }
+                }
+
+                .add-playground {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    padding: 8px 12px;
+                    background: linear-gradient(45deg, #28a745, #85d935); /* Green gradient */
+                    color: #fff;
+                    border: none;
+                    border-radius: 6px;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+                    &:hover {
+                        background: linear-gradient(45deg, #85d935, #28a745);
+                        transform: translateY(-2px);
+                        box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+                    }
+
+                    &:active {
+                        transform: scale(0.98);
+                    }
+                }
+            }
+        }
+        .cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+    gap: 20px; /* Space between cards */
+    margin-top: 20px;
+
+    .card {
+        background-color: #ffffff; /* White background for cards */
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        padding: 10px;
+        display: flex;
+        align-items: center; /* Align items vertically */
+        gap: 15px; /* Space between elements */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px); /* Lift effect */
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        img {
+            width: 35px; /* Fixed image size */
+            height: 35px;
+            border-radius: 4px; /* Slightly rounded edges for the image */
+        }
+
+        .content {
+            flex: 1; /* Expand to fill available space */
+            display: flex;
+            flex-direction: column; /* Stack title and language */
+            gap: 5px;
+
+            .title {
+                font-size: 1rem;
+                font-weight: 600;
+                color: #333333; /* Dark gray text */
+            }
+
+            .language {
+                font-size: 0.9rem;
+                color: #666666; /* Medium gray text */
+            }
+        }
+
+        .actions {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Space between buttons */
+
+            span.material-icons {
+                font-size: 1.5rem;
+                color: #666666; /* Default icon color */
+                cursor: pointer;
+                transition: color 0.2s ease;
+
+                &:hover {
+                    color: #FF7043; /* Orange-red hover effect */
+                }
+            }
+        }
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cards-container {
+        grid-template-columns: 1fr; /* Single column for smaller screens */
+    }
+
+    .card {
+        flex-direction: row; /* Maintain row layout */
+        align-items: center;
+    }
+}
+
+    }
+
+}
