@@ -11,7 +11,7 @@ export const modalConstants={
 }
 export const ModalProvider = ({ children }) => {
     const [modalType, setModalType] = useState(null);
-
+    const [modalPayload, setModalPayload] = useState(null);
     const closeModal = () => {
         setModalType(null);
     };
@@ -28,6 +28,8 @@ export const ModalProvider = ({ children }) => {
         openModal:setModalType,
         closeModal,
         activeModal: modalType,
+        modalPayload,
+        setModalPayload
     };
 
     return (

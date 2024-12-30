@@ -4,11 +4,12 @@ import { PlaygroundContext } from '../../../Providers/PlaygroundProvider';
 import {ModalContext,modalConstants} from '../../../Providers/ModalProvider.jsx'
 const Folder = ({ folderTitle, cards ,id}) => {
     const {deleteFolder}=useContext(PlaygroundContext)
-    const {openModal}=useContext(ModalContext)
+    const {openModal,setModalPayload}=useContext(ModalContext)
     const onDeleteFolder=()=>{
         deleteFolder(id)
     }
     const onEditFolderTitle=()=>{
+        setModalPayload(id)
         openModal(modalConstants.UPDATE_FOLDER_TITLE)
     }
     return (
