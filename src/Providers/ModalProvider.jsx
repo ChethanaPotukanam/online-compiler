@@ -33,6 +33,8 @@ export const ModalProvider = ({ children }) => {
         activeModal: modalType,
         modalPayload,
         setModalPayload
+        modalPayload,
+        setModalPayload
     };
 
     return (

@@ -58,7 +58,7 @@ export const PlaygroundProvider = ({ children }) => {
         const storedData = localStorage.getItem('data');
         return storedData ? JSON.parse(storedData) : initialData;
     });
-
+    
     const createNewPlayground = (newPlayground) => {
         const { folderName, fileName, language } = newPlayground;
         const newFolders = [...folders];
